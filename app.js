@@ -33,7 +33,7 @@
 //       courseGoalA: "<h2>Finish and learn vue </h2>",
 //       courseGoalB: "Implement vue",
 //       vueLink: "https://vuejs.org/",
-      
+
 //     };
 //   },
 
@@ -51,14 +51,20 @@
 
 // app.mount("#user-goal");
 
-
-
 const app = Vue.createApp({
-    data(){
-        return {
-            counter:0,
-        }
-    }
-})
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  methods: {
+    add() {
+      this.counter = this.counter + 1;
+    },
+    subtarct() {
+      this.counter = this.counter - 1;
+    },
+  },
+});
 
-app.mount('#events')
+app.mount("#events");
