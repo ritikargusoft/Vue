@@ -30,9 +30,16 @@
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      courseGoal: 'ihero',
+      vueLink :'https://vuejs.org/'
     };
   },
+
+  methods:{
+    outputGoal(){
+        
+    }
+  }
 });
 
-app.mount("#events");
+app.mount("#user-goal");
