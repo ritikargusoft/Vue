@@ -30,16 +30,23 @@
 const app = Vue.createApp({
   data() {
     return {
-      courseGoal: 'ihero',
-      vueLink :'https://vuejs.org/'
+      courseGoalA: "Finish and learn vue",
+      courseGoalB: "Implement vue",
+      vueLink: "https://vuejs.org/",
+      
     };
   },
 
-  methods:{
-    outputGoal(){
-        
-    }
-  }
+  methods: {
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        return this.courseGoalA;
+      } else {
+        return this.courseGoalB;
+      }
+    },
+  },
 });
 
 app.mount("#user-goal");
