@@ -60,9 +60,12 @@
     <section id="events">
       <h2>Events in Action</h2>
       <!-- use v-on:click or @click -->
-      <button v-on:click="add()">Add</button>
-      <button v-on:click="subtarct()">Remove</button>
+      <button v-on:click="add(4)">Add 4</button>
+      <button v-on:click="subtarct(4)">Remove 4</button>
       <p>Result: {{ counter }}</p>
+
+      <input type="text" v-on:input="setName($event, 'negi')" />
+      <p>Your Name: {{name}}</p>
     </section>
   </body>
 </html>
