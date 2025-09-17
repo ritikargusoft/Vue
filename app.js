@@ -56,17 +56,38 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name:'',  
-      confirmedName:''
+      confirmedName:'',
+      fullname:''
     };
+  },
+  watch:{
+    counter(value){
+        if(value>50){
+            this.counter =0;
+        }
+    }
+    // fullname(){
+    //      if(this.name === ''){ 
+    //         return ''
+    //     }
+    //     return this.name + ' ' +'negi'
+    // }
+
+    //  lastname(value){
+    //      if(this.name === ''){ 
+    //         return ''
+    //     }
+    //     return this.name + ' ' + value
+    // }
   },
   computed:{
     fullname(){
-         if(this.name === ''){ 
+     if(this.name === '' || this.lastName === ''){
             return ''
         }
-        return this.name + ' ' +'negi'
-    }
+        return this.name + ' ' + this.lastName
   },
+},
   methods: {
     outputFullname(){
         if(this.name === ''){
@@ -92,7 +113,7 @@ const app = Vue.createApp({
     subtarct(number) {
       this.counter = this.counter - number;
     },
-  },
+}
 });
 
 app.mount("#events");
