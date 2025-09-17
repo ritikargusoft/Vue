@@ -27,26 +27,38 @@
 
 // buttonEl.addEventListener('click', addGoal);
 
-const app = Vue.createApp({
-  data() {
-    return {
-      courseGoalA: "<h2>Finish and learn vue </h2>",
-      courseGoalB: "Implement vue",
-      vueLink: "https://vuejs.org/",
+// const app = Vue.createApp({
+//   data() {
+//     return {
+//       courseGoalA: "<h2>Finish and learn vue </h2>",
+//       courseGoalB: "Implement vue",
+//       vueLink: "https://vuejs.org/",
       
-    };
-  },
+//     };
+//   },
 
-  methods: {
-    outputGoal() {
-      const randomNumber = Math.random();
-      if (randomNumber < 0.5) {
-        return this.courseGoalA;
-      } else {
-        return this.courseGoalB;
-      }
-    },
-  },
-});
+//   methods: {
+//     outputGoal() {
+//       const randomNumber = Math.random();
+//       if (randomNumber < 0.5) {
+//         return this.courseGoalA;
+//       } else {
+//         return this.courseGoalB;
+//       }
+//     },
+//   },
+// });
 
-app.mount("#user-goal");
+// app.mount("#user-goal");
+
+
+
+const app = Vue.createApp({
+    data(){
+        return {
+            counter:0,
+        }
+    }
+})
+
+app.mount('#events')
