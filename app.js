@@ -59,8 +59,22 @@ const app = Vue.createApp({
       confirmedName:''
     };
   },
+  computed:{
+    fullname(){
+         if(this.name === ''){ 
+            return ''
+        }
+        return this.name + ' ' +'negi'
+    }
+  },
   methods: {
-    
+    outputFullname(){
+        if(this.name === ''){
+            return ''
+        }
+        return this.name + ' ' +'negi'
+    },
+
     confirmInput(){
         this.confirmedName = this.name
     },
