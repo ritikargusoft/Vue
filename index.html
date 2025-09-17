@@ -62,11 +62,14 @@
       <!-- use v-on:click or @click -->
       <button v-on:click="add(4)">Add 4</button>
       <button v-on:click.middle="subtarct(4)">Remove 4</button>
-      <p v-once>Starting Counter: {{ counter }}</p>
+      <p v-once>Starting Counter: {{ counter  }}</p>
       <p>Result: {{ counter }}</p>
 
-      <input type="text" v-on:input="setName($event, 'negi') " v-on:keyup.enter="confirmInput" />
-      <p>Your Name: {{confirmedName}}</p>
+      <!-- <input type="text" v-bind:value="name" v-on:input="setName($event, 'negi') " v-on:keyup.enter="confirmInput" /> -->
+      <input type="text" v-model="name" />
+ <button v-on:click ="resetInput">Reset inp</button>
+      <p>Your Name: {{name}}</p>
+
 
       <form v-on:submit.prevent="submitForm">
         <input type="text">
