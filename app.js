@@ -1,141 +1,14 @@
-// Vue.createApp({
-//   data() {
-//     return {
-//       goals: [],
-//       enteredValue: "",
-//     };
-//   },
-//   methods: {
-//     addGoal() {
-//       this.goals.push(this.enteredValue);
-//       this.enteredValue = "";
-//     },
-//   },
-// }).mount("#app");
-
-// const buttonEl = document.querySelector('button');
-// const inputEl = document.querySelector('input');
-// const listEl = document.querySelector('ul');
-
-// function addGoal() {
-//   const enteredValue = inputEl.value;
-//   const listItemEl = document.createElement('li');
-//   listItemEl.textContent = enteredValue;
-//   listEl.appendChild(listItemEl);
-//   inputEl.value = '';
-// }
-
-// buttonEl.addEventListener('click', addGoal);
-
-// const app = Vue.createApp({
-//   data() {
-//     return {
-//       courseGoalA: "<h2>Finish and learn vue </h2>",
-//       courseGoalB: "Implement vue",
-//       vueLink: "https://vuejs.org/",
-
-//     };
-//   },
-
-//   methods: {
-//     outputGoal() {
-//       const randomNumber = Math.random();
-//       if (randomNumber < 0.5) {
-//         return this.courseGoalA;
-//       } else {
-//         return this.courseGoalB;
-//       }
-//     },
-//   },
-// });
-
-// app.mount("#user-goal");
-
-// const app = Vue.createApp({
-//   data() {
-//     return {
-//       counter: 0,
-//       name:'',
-//       confirmedName:'',
-//       fullname:''
-//     };
-//   },
-// //   watch:{
-// //     counter(value){
-// //         if(value>50){
-// //             this.counter =0;
-// //         }
-// //     }
-//     // fullname(){
-//     //      if(this.name === ''){
-//     //         return ''
-//     //     }
-//     //     return this.name + ' ' +'negi'
-//     // }
-
-//     //  lastname(value){
-//     //      if(this.name === ''){
-//     //         return ''
-//     //     }
-//     //     return this.name + ' ' + value
-//     // }
-// //   },
-//   computed:{
-//     fullname(){
-//      if(this.name === '' || this.lastName === ''){
-//             return ''
-//         }
-//         return this.name + ' ' + this.lastName
-//   },
-// },
-//   methods: {
-//     outputFullname(){
-//         if(this.name === ''){
-//             return ''
-//         }
-//         return this.name + ' ' +'negi'
-//     },
-
-//     confirmInput(){
-//         this.confirmedName = this.name
-//     },
-//     resetInput(){
-//         this.name='';
-//     },
-//     submitForm(){
-//         alert('SUbmitted!');},
-//     setName(event){
-//       this.name =   event.target.value
-//     },
-//     add(number) {
-//       this.counter = this.counter + number;
-//     },
-//     subtarct(number) {
-//       this.counter = this.counter - number;
-//     },
-// }
-// });
-
-// app.mount("#events");
 const app = Vue.createApp({
   data() {
     return {
-      boxASelected: false,
-      boxBSelected: false,
-      boxCSelected: false,
+      enteredGoalValue: "",
+      goals: [],
     };
   },
   methods: {
-    boxSelected(box) {
-      if (box === 'A') {
-        this.boxASelected = !this.boxASelected;
-      } else if (box === 'B') {
-        this.boxBSelected = !this.boxBSelected;
-      } else if (box === 'C') {
-        this.boxCSelected = !this.boxCSelected;
-      }
+    addGoal() {
+      this.goals.push(this.enteredGoalValue);
     },
   },
 });
-
-app.mount('#styling');
+app.mount("#user-goals");

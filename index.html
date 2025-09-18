@@ -14,97 +14,25 @@
   </head>
   <body>
     <header>
-      <h1>Vue Dynamic Styling</h1>
+      <h1>Vue Course Goals</h1>
     </header>
-    <section id="styling">
-      <div
-        class="demo"
-        :style="{borderColor: boxASelected ? 'red' : '#ccc'}"
-        @click="boxSelected('A')"
-      ></div>
-      <div class="demo" :style="{borderColor: boxBSelected ? 'red' : '#ccc'}" @click="boxSelected('B')"></div>
-      <div class="demo" :style="{borderColor: boxCSelected ? 'red' : '#ccc'}" @click="boxSelected('C')"></div>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="enteredGoalValue" />
+      <button @click="addGoal">Add Goal</button>
+
+          <!-- <p v-show="goals.length === 0">
+        No goals have been added yet - please start adding some!
+      </p>
+       -->
+      <p v-if="goals.length === 0">
+        No goals have been added yet - please start adding some!
+      </p>
+      <p v-else-if="goals.length > 0">hide</p>
+      <ul v-else >
+        <li>Goal</li>
+      </ul>
     </section>
   </body>
 </html>
 
-<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-<div id="app">{{ message }}</div>
-
-<script>
-  const { createApp, ref } = Vue
-
-  createApp({
-    setup() {
-      const message = ref('Hello vue!')
-      return {
-        message
-      }
-    }
-  }).mount('#app')
-</script> -->
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A First App</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="app">
-      <div>
-        <label for="goal">Goal</label>
-        <input type="text" id="goal" v-model="enteredValue" />
-        <button v-on:click="addGoal">Add Goal</button>
-      </div>
-      <ul>
-        <li v-for="goal in goals">{{ goal }}</li>
-      </ul>
-    </div>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js"></script>
-  </body>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Basics</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>Vue Events</h1>
-    </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      use v-on:click or @click
-      <button v-on:click="add(4)">Add 4</button>
-      <button v-on:click.middle="subtarct(4)">Remove 4</button>
-      <p v-once>Starting Counter: {{ counter }}</p>
-      <p>Result: {{ counter }}</p>
-
-      <input type="text" v-bind:value="name" v-on:input="setName($event, 'negi') " v-on:keyup.enter="confirmInput" />
-      <input type="text" v-model="name" />
-      <input type="text" v-model="lastname" />
-      <button v-on:click="resetInput">Reset input</button>
-      <p>Your Name: {{fullname}}</p>
-
-      <form v-on:submit.prevent="submitForm">
-        <input type="text" />
-        <button>Sign Up</button>
-      </form>
-    </section>
-  </body>
-</html> -->
